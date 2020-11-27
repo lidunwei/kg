@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="map" style="width:1900px;height:1000px;"></div>
+
+<script src="../../dist/dist.js"></script>
+
+<script>
+
+    let data = {'nodes': [{'name': '姬如雪', 'role_id': 0, 'group': 1, 'avatar': './img/140646844806.jpg'}, {'name': '女帝贴身侍女', 'role_id': 1, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '素心剑', 'role_id': 2, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '幻影诀', 'role_id': 3, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '大星位', 'role_id': 4, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '别称', 'role_id': 5, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '姬姑娘', 'role_id': 6, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '雪儿', 'role_id': 7, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '雪姑娘', 'role_id': 8, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '小姐姐', 'role_id': 9, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '岐', 'role_id': 10, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '情敌', 'role_id': 11, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '上官云阙', 'role_id': 12, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '蚩梦', 'role_id': 13, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '女帝', 'role_id': 14, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '女帝', 'role_id': 15, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '李星云', 'role_id': 16, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '同伴', 'role_id': 17, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '陆林轩', 'role_id': 18, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '张子凡', 'role_id': 19, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '倾国倾城', 'role_id': 20, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '温韬', 'role_id': 21, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '李存义', 'role_id': 22, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '拿到火灵芝', 'role_id': 23, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '幻音坊', 'role_id': 24, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '白骢马', 'role_id': 25, 'group': 2, 'avatar': './img/140646844806.jpg'}, {'name': '蚩笠', 'role_id': 26, 'group': 2, 'avatar': './img/140646844806.jpg'}], 'links': [{'source': 0, 'target': 1, 'relation': '身份', 'color': '88748d'}, {'source': 0, 'target': 2, 'relation': '武器', 'color': '88748d'}, {'source': 0, 'target': 3, 'relation': '武功', 'color': '88748d'}, {'source': 0, 'target': 4, 'relation': '内力', 'color': '88748d'}, {'source': 0, 'target': 5, 'relation': '别称', 'color': '887400'}, {'source': 5, 'target': 6, 'relation': '包含', 'color': '00748d'}, {'source': 5, 'target': 7, 'relation': '包含', 'color': '00748d'}, {'source': 5, 'target': 8, 'relation': '包含', 'color': '00748d'}, {'source': 5, 'target': 9, 'relation': '包含', 'color': '00748d'}, {'source': 0, 'target': 10, 'relation': '所属', 'color': '88748d'}, {'source': 0, 'target': 11, 'relation': '情敌', 'color': '887400'}, {'source': 11, 'target': 12, 'relation': '包含', 'color': '00748d'}, {'source': 11, 'target': 13, 'relation': '包含', 'color': '00748d'}, {'source': 11, 'target': 14, 'relation': '包含', 'color': '00748d'}, {'source': 0, 'target': 15, 'relation': '师傅', 'color': '88748d'}, {'source': 0, 'target': 16, 'relation': '恋人', 'color': '88748d'}, {'source': 0, 'target': 17, 'relation': '同伴', 'color': '887400'}, {'source': 17, 'target': 18, 'relation': '包含', 'color': '00748d'}, {'source': 17, 'target': 19, 'relation': '包含', 'color': '00748d'}, {'source': 17, 'target': 20, 'relation': '包含', 'color': '00748d'}, {'source': 17, 'target': 21, 'relation': '包含', 'color': '00748d'}, {'source': 17, 'target': 22, 'relation': '包含', 'color': '00748d'}, {'source': 0, 'target': 23, 'relation': '主要成就', 'color': '88748d'}, {'source': 0, 'target': 24, 'relation': '门派', 'color': '88748d'}, {'source': 0, 'target': 25, 'relation': '坐骑', 'color': '88748d'}, {'source': 0, 'target': 26, 'relation': '操纵者', 'color': '88748d'}]}
+
+
+    var map = document.querySelector('#map');
+    console.log(new RelationChart(map,data))
+
+</script>
+</body>
+</html>
