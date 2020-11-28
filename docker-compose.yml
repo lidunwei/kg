@@ -1,0 +1,15 @@
+version: "0.0"
+services:
+  neo4j:
+    image: neo4j:3.5.20
+    volumes:
+      - ./neo4j/conf:/var/lib/neo4j/conf
+      - ./neo4j/data:/var/lib/neo4j/data
+    ports:
+      - 7478:7478
+      - 7698:7698
+    environment:
+      - NEO4J_AUTH=neo4j/123456
+      - NEO4J_dbms_memory_heap_max__size=1G
+      - NEO4J_dbms_connector_http_listen__address=0.0.0.0:7478
+      - NEO4J_dbms_connector_bolt_listen__address=0.0.0.0:7698
