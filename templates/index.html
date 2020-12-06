@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="web/js/dist.js"></script>
+    <script type="text/javascript"  src="web/js/jquery-1.10.2.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="map" style="width:1900px;height:1000px;"></div>
+</body>
+<script type="text/javascript">
+	function getData(tp) {
+    var ind;
+    $.ajax({
+        type:'post',
+        url:'http://127.0.0.1:6950/api/data/kg',
+        cache: false,
+        async: false,
+        success: function(data) {
+         var  obj1 = JSON.parse(data);
+         nodes = obj1.nodes;
+        links = obj1.links;
+         console.log(nodes);
+
+            ind = {"links":links,"nodes":nodes};
+        }, error: function(data) {
+            ind = {"":""};
+        }
+    });
+    console.log(ind);
+    return ind;
+}
+
+
+
+var data = getData();
+ console.log(data);
+ var map = document.querySelector('#map');
+    console.log(new RelationChart(map,data));
+		</script>
+</html>

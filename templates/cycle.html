@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8"/>
+    <title>画江湖之不良人</title>
+        <script type="text/javascript"  src="web/js/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="web/css/cycle.css"/>
+    <script type="text/javascript" src="web/js/cycle.js"></script>
+</head>
+    <body style=" background: url('web/img/画江湖.png')no-repeat center center;background-size: cover; background-attachment: fixed;">
+<div id="div1" class="div1">
+
+</div>
+
+    </body>
+    <script type="text/javascript">
+        $(function() {
+            $.ajax({
+            url: "http://127.0.0.1:6950/api/data/cycle",
+            type: "POST",
+            dataType: "json",
+            success: function(data) {
+                var html = "";
+            $.each(data.result, function(i, item) {
+            html += ' <a href="http://www.lanrentuku.com' +'" target="_blank" style="color:green">'+ item.name + '</a>';
+<!--                html += ' <a href="' +item.name+'&type='+item.type+'" target="_blank">'+ item.name + '</a>';-->
+
+            });
+            console.log(html)
+            $(".div1").append(html);
+            }
+       })
+        })
+    </script>
+</html>

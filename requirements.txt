@@ -1,0 +1,5 @@
+flask_cors
+flask~=1.1.2
+flasgger==0.9.3
+Pillow~=7.2.0
+py2neo~=2020.0.0
