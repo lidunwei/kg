@@ -38,5 +38,5 @@ def tranImg(img_path):
 
 
 if __name__ == '__main__':
-    for file in os.listdir("../web/img/画江湖/"):
-        print(tranImg("../web/img/画江湖/" + file))
+    for file in os.listdir("../web/img/temp/"):
+        print(tranImg("../web/img/temp/" + file))

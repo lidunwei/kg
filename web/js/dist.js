@@ -5248,18 +5248,18 @@
         }
 
         var f, c, u = {
-            width: 1e3,
-            height: 800,
+            width: 1000,
+            height: 600,
             nodes: [],
             links: [],
             isHighLight: !0,
             isScale: !0,
             scaleExtent: [.5, 1.5],
             chargeStrength: -300,
-            collide: 100,
+            collide: 80,
             nodeWidth: 160,
-            margin: 20,
-            alphaDecay: .0228,
+            margin: 10,
+            alphaDecay: .1228,
             r: 45,
             relFontSize: 12,
             linkSrc: 30,

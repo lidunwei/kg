@@ -80,14 +80,29 @@ def handle(data, file):
     return result
 
 
-def handle_main():
-    with open("data/画江湖之不良人.json", encoding="utf8") as f:
-        data = json.load(f)["data"][0]
-        print(data)
-    result = handle(data, "web/img/画江湖/")
-    for element in result["nodes"]:
-        if os.path.exists(element["avatar"]):
-            continue
-        else:
-            element.update({"avatar": "../web/img/temp.jpg"})
-    return result
+def handle_main(name,type):
+    try:
+        with open("data/"+type+"/"+name+".json", encoding="utf8") as f:
+            data = json.load(f)
+            print(data)
+        result = handle(data, "web/img/"+type+"/")
+        for element in result["nodes"]:
+            if os.path.exists(element["avatar"]):
+                continue
+            else:
+                element.update({"avatar": "../web/img/temp.jpg"})
+        return result
+    except:
+        return {"error":"error"}
+
+
+# with open("../data/data.json", encoding="utf8") as f:
+#     data = json.load(f)["data"]
+#     result = []
+#     for element in data:
+#         for key, value in element.items():
+#             result.append({"name": key, "type": "人物"})
+#         with open("../data/画江湖/"+key+".json","w",encoding="utf8") as f:
+#             json.dump(element,f,ensure_ascii=False, indent=2)
+#     with open("../data/" + "cycle.json", "w", encoding="utf8") as f:
+#         json.dump({"result":result}, f, ensure_ascii=False, indent=2)
